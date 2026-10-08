@@ -1,4 +1,9 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portfolio of Nguyen Thai Lan Anh (Annie), Senior Business Analyst and CBAP.">
 <title>Annie Nguyen Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,12 +107,15 @@ section{padding-block:110px}
 .dl{display:grid;grid-template-columns:1fr 1fr}
 .dl span{padding:14px 22px;border-bottom:1px solid var(--line);font-size:15px;font-weight:400}
 .dl span:nth-child(odd){border-right:1px solid var(--line)}
-.steps{display:grid;grid-template-columns:repeat(6,1fr);padding:24px 16px 26px;position:relative}
-.steps::before{content:"";position:absolute;left:calc(100%/12 + 16px);right:calc(100%/12 + 16px);top:46px;height:2px;background:linear-gradient(90deg,var(--deep-3),var(--emerald),var(--lime))}
+.steps{display:grid;grid-template-columns:repeat(7,1fr);padding:24px 16px 26px;position:relative}
+.steps::before{content:"";position:absolute;left:calc(100%/14 + 16px);right:calc(100%/14 + 16px);top:44px;height:2px;background:linear-gradient(90deg,var(--deep-3),var(--emerald),var(--lime))}
 .step{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12px;font-weight:500;color:var(--muted);position:relative;text-align:center}
 .sic{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--surface);border:2px solid var(--emerald);color:var(--accent)}
 .sic svg.lucide{width:19px;height:19px}
-.step:last-child .sic{background:var(--emerald);color:var(--deep)}
+.step.hl .sic{background:var(--emerald);color:var(--deep)}
+.step{font-size:11px}
+.sic{width:40px;height:40px}
+.steps{padding-inline:10px}
 
 /* projects band */
 #projects{position:relative;overflow:hidden;color:var(--on-deep);background-color:var(--deep);
@@ -258,7 +266,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;p
   .xrow{grid-template-columns:1fr;padding:20px 22px}
   .dl{grid-template-columns:1fr}
   .dl span:nth-child(odd){border-right:0}
-  .steps{grid-template-columns:repeat(3,1fr);row-gap:18px}
+  .steps{grid-template-columns:repeat(4,1fr);row-gap:18px}
   .steps::before{display:none}
   .proj{padding:24px 22px}
 }
@@ -304,7 +312,17 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;p
 :root[data-theme="dark"]{--name-solid:#8BE8B3}
 .hero h1::before{content:none!important}
 .hero h1 .name{background:none!important;-webkit-background-clip:border-box;background-clip:border-box;color:var(--name-solid);filter:none!important;animation:none!important;font-weight:700;letter-spacing:-.025em}
+/* tighter section spacing */
+section{padding-block:64px}
+#contact{padding-block:0 48px}
+.sec-head{margin-bottom:32px}
+.otto{margin-bottom:48px}
+.subh{margin:44px 0 18px}
+@media (max-width:640px){section{padding-block:48px}}
 </style>
+</head>
+<body>
+
 
 <nav><div class="wrap">
   <a class="logo" href="#top">annie<span>.</span>ba</a>
@@ -365,8 +383,9 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;p
           <div class="step"><span class="sic"><i data-lucide="search"></i></span><span>Analyze</span></div>
           <div class="step"><span class="sic"><i data-lucide="pen-line"></i></span><span>Specify</span></div>
           <div class="step"><span class="sic"><i data-lucide="badge-check"></i></span><span>Validate</span></div>
-          <div class="step"><span class="sic"><i data-lucide="clipboard-check"></i></span><span>UAT</span></div>
-          <div class="step"><span class="sic"><i data-lucide="rocket"></i></span><span>Go-live</span></div>
+          <div class="step hl"><span class="sic"><i data-lucide="rocket"></i></span><span>Go-live</span></div>
+          <div class="step"><span class="sic"><i data-lucide="graduation-cap"></i></span><span>Transfer</span></div>
+          <div class="step"><span class="sic"><i data-lucide="settings"></i></span><span>Maintenance</span></div>
         </div>
       </aside>
     </div>
@@ -578,4 +597,5 @@ lb.addEventListener('click',function(){lb.hidden=true});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.hidden=true});
 </script>
 
-</body></html>
+</body>
+</html>
