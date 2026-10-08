@@ -583,6 +583,21 @@ section{padding-block:56px}
 /* smaller section titles */
 .sec-head h2{font-size:clamp(26px,3vw,36px)!important}
 #process .sec-head h2{font-size:clamp(22px,2.2vw,26px)!important}
+/* mobile menu */
+.menu-btn{display:none;width:40px;height:40px;border:1px solid rgba(255,255,255,.25);border-radius:10px;background:transparent;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:0}
+.menu-btn span{display:block;width:18px;height:2px;border-radius:2px;background:#fff;transition:transform .2s,opacity .2s}
+nav.open .menu-btn span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+nav.open .menu-btn span:nth-child(2){opacity:0}
+nav.open .menu-btn span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media (max-width:640px){
+  nav .wrap{position:relative;flex-wrap:nowrap}
+  .menu-btn{display:flex;order:3}
+  .hire{margin-left:auto}
+  .links{display:none!important;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;padding:8px 20px 14px;background:linear-gradient(180deg,var(--deep),var(--deep-2));box-shadow:0 16px 30px -18px rgba(0,0,0,.6)}
+  nav.open .links{display:flex!important}
+  .links a{padding:12px 0;font-size:16px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .links a:last-child{border-bottom:0}
+}
 </style>
 <style>
 #insights{min-height:calc(100vh - 140px);padding-block:56px 72px}
@@ -595,8 +610,8 @@ footer{padding-top:24px}
 <body>
 <nav><div class="wrap">
   <a class="logo" href="index.html">annie<span>.</span>ba</a>
-  <div class="links"><a href="index.html#about">About</a><a href="index.html#process">Process</a><a href="index.html#experience">Experience</a><a href="index.html#skills">Skills</a><a href="index.html#certificates">Certificates</a><a href="index.html#projects">Projects</a><a href="insights.html" aria-current="page">Insights</a></div>
-  <a class="hire" href="index.html#contact">Contact</a>
+  <div class="links" id="nav-links"><a href="index.html#about">About</a><a href="index.html#process">Process</a><a href="index.html#experience">Experience</a><a href="index.html#skills">Skills</a><a href="index.html#certificates">Certificates</a><a href="index.html#projects">Projects</a><a href="insights.html" aria-current="page">Insights</a></div>
+  <a class="hire" href="index.html#contact">Contact</a><button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
 </div></nav>
 <main>
   <section id="insights"><div class="wrap">
@@ -610,5 +625,10 @@ footer{padding-top:24px}
   </div></section>
 </main>
 <footer><div class="wrap"><span>© 2026 Annie Nguyen</span><span>Ho Chi Minh City, Vietnam</span></div></footer>
+<script>
+(function(){var n=document.querySelector('nav'),b=document.getElementById('menu-btn');if(!n||!b)return;
+b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Close menu':'Open menu')});
+n.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');b.setAttribute('aria-expanded','false')})});})();
+</script>
 </body>
 </html>
