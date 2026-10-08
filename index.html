@@ -596,6 +596,30 @@ section{padding-block:56px}
 .xco{font-size:18px;font-weight:600;color:var(--lime);line-height:1.3}
 .xloc{font-size:13.5px;color:var(--muted)}
 .xrow h3,.xco{font-weight:400!important}
+/* mobile fixes (must stay last) */
+@media (max-width:960px){
+  .proj{grid-template-columns:1fr!important;gap:16px!important;padding:24px 22px!important}
+  .proj ul{grid-template-columns:1fr!important}
+  .omods{grid-template-columns:1fr!important}
+  .oresp ul{grid-template-columns:1fr!important}
+  .about3{grid-template-columns:1fr!important}
+  .aright{position:static!important}
+}
+@media (max-width:640px){
+  .ocomp{padding:22px 18px!important}
+  .ohead{flex-direction:column;align-items:flex-start!important}
+  .ometa{gap:6px 18px}
+  .proj{padding:22px 18px!important}
+  .proj .desc{font-size:15.5px}
+  .xrow{grid-template-columns:1fr!important;gap:4px!important}
+  .xco{font-size:16px}
+  .xrow h3{font-size:16px}
+  .flow9{grid-template-columns:repeat(3,1fr)!important}
+  .certmini{width:100%}
+  .certs2{flex-direction:column}
+  .ticker{grid-template-columns:1fr 1fr!important}
+  .hero h1{white-space:normal!important}
+}
 </style>
 </head>
 <body>
