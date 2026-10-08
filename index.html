@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Anh Nguyen – Business Analyst</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#F4F6F3}
+a{color:#17302B}a:hover{color:#B4530F}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:24px;box-sizing:border-box}
+.display{font-family:'Bricolage Grotesque',Georgia,serif;letter-spacing:-0.02em;text-wrap:balance}
+.mono{font-family:'IBM Plex Mono',ui-monospace,Menlo,monospace}
+.eyebrow{font-family:'IBM Plex Mono',ui-monospace,Menlo,monospace;font-size:13px;letter-spacing:0.08em;text-transform:uppercase}
+.card{background:#FFFFFF;border:1px solid #D5DDD8;border-radius:6px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 20px;border-radius:4px;font-weight:600;font-size:15px;text-decoration:none}
+.navlink{text-decoration:none;font-size:15px;padding:12px 4px}
+.navlink:hover{text-decoration:underline}
+.textlink{font-weight:600;text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:2px}
+html{scroll-behavior:smooth}
+a:focus-visible{outline:2px solid #B4530F;outline-offset:3px}
+@media (max-width:640px){.hide-sm{display:none}}
+</style>
+</head>
+<body>
+<div style="font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #17302B; background: #F4F6F3; font-size: 16px; line-height: 1.6">
+
+<!-- NAV + HERO -->
+<header style="background: #17302B; color: #EAF0EC">
+  <div class="wrap" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-block: 20px">
+    <a href="#top" style="color: #EAF0EC; text-decoration: none; display: flex; align-items: center; gap: 12px">
+      <span class="mono" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1.5px solid #EAF0EC; border-radius: 4px; font-size: 14px; font-weight: 500">AN</span>
+      <span style="font-weight: 600; font-size: 16px">Anh Nguyen</span>
+    </a>
+    <nav style="display: flex; flex-wrap: wrap; gap: 20px" aria-label="Main">
+      <a class="navlink" href="#work" style="color: #EAF0EC">Case studies</a>
+      <a class="navlink" href="#approach" style="color: #EAF0EC">Approach</a>
+      <a class="navlink" href="#writing" style="color: #EAF0EC">Writing</a>
+      <a class="navlink" href="#toolkit" style="color: #EAF0EC">Toolkit</a>
+      <a class="navlink" href="#contact" style="color: #EAF0EC">Contact</a>
+    </nav>
+  </div>
+
+  <div id="top" class="wrap" style="display: flex; flex-wrap: wrap; align-items: center; gap: 56px; padding-block: 64px 96px">
+    <div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+      <div class="eyebrow" style="color: #9FC2B4">IT Business Analyst · Supply chain &amp; sourcing systems</div>
+      <h1 class="display" style="margin: 0; font-size: clamp(36px, 5vw, 60px); line-height: 1.05; font-weight: 700; color: #FFFFFF">I turn messy sourcing processes into requirements teams can build and test.</h1>
+      <p style="margin: 0; max-width: 560px; font-size: 18px; color: #C9D8D1">Requirements, process maps and acceptance criteria for vendor portals, purchase orders and factory audits. Lately, also building AI agents that help BAs review documents faster.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px">
+        <a class="btn" href="#work" style="background: #B4530F; color: #FFFFFF">View case studies</a>
+        <a class="btn" href="#contact" style="border: 1.5px solid #EAF0EC; color: #EAF0EC">Get my CV</a>
+      </div>
+    </div>
+
+    <!-- Signature visual: a requirement card -->
+    <div style="flex: 1 1 380px; min-width: 0; max-width: 460px; display: flex; flex-direction: column; gap: 12px">
+      <div class="card" style="padding: 24px; display: flex; flex-direction: column; gap: 16px; color: #17302B; box-shadow: 0 20px 40px rgba(0,0,0,0.25)">
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
+          <span class="mono" style="font-size: 13px; color: #52645E">US-PO-014</span>
+          <span class="mono" style="font-size: 12px; padding: 2px 10px; border-radius: 99px; background: #E3EEE8; color: #1D5A43">Ready for dev</span>
+        </div>
+        <div style="font-size: 16px; line-height: 1.5"><strong>As a</strong> vendor, <strong>I want to</strong> confirm or reject a purchase order online, <strong>so that</strong> the buyer sees my commitment the same day.</div>
+        <div style="border-top: 1px dashed #C4CFC9; padding-top: 14px; display: flex; flex-direction: column; gap: 6px; font-size: 14px" class="mono">
+          <div><span style="color: #B4530F; font-weight: 500">GIVEN</span> a PO in status "Issued"</div>
+          <div><span style="color: #B4530F; font-weight: 500">WHEN</span> the vendor rejects it without a reason</div>
+          <div><span style="color: #B4530F; font-weight: 500">THEN</span> the system blocks submission and shows "Reason is required"</div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 12px" class="mono">
+          <span style="padding: 2px 8px; border: 1px solid #D5DDD8; border-radius: 4px; color: #52645E">Traces to BR-07</span>
+          <span style="padding: 2px 8px; border: 1px solid #D5DDD8; border-radius: 4px; color: #52645E">UAT-TC-031</span>
+        </div>
+      </div>
+      <div class="mono" style="font-size: 12px; color: #9FC2B4">Sample artifact · how I write stories</div>
+    </div>
+  </div>
+</header>
+
+<!-- DOMAIN STRIP -->
+<section style="border-bottom: 1px solid #D5DDD8; background: #FFFFFF">
+  <div class="wrap" style="display: flex; flex-wrap: wrap; gap: 12px 32px; align-items: center; padding-block: 24px">
+    <span class="eyebrow" style="color: #52645E">Domains</span>
+    <span style="font-weight: 500">Purchase orders</span>
+    <span style="font-weight: 500">Vendor onboarding</span>
+    <span style="font-weight: 500">Factory audit &amp; inspection</span>
+    <span style="font-weight: 500">ASN &amp; shipment</span>
+    <span style="font-weight: 500">UAT &amp; configuration</span>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section id="approach" class="wrap" style="padding-block: 96px; display: flex; flex-direction: column; gap: 40px">
+  <div style="display: flex; flex-direction: column; gap: 12px; max-width: 640px">
+    <div class="eyebrow" style="color: #B4530F">How I work</div>
+    <h2 class="display" style="margin: 0; font-size: 40px; line-height: 1.1; font-weight: 700">From the first workshop to UAT sign-off</h2>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px">
+    <div style="display: flex; flex-direction: column; gap: 10px; border-top: 2px solid #17302B; padding-top: 20px">
+      <span class="mono" style="font-size: 13px; color: #52645E">Step 1</span>
+      <h3 style="margin: 0; font-size: 20px">Elicit</h3>
+      <p style="margin: 0; color: #3E504A">Interviews and workshops with buyers, merchandisers, QA and vendors. I find the pain behind the request.</p>
+      <span class="mono" style="font-size: 13px; color: #52645E">→ Stakeholder map, interview notes</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px; border-top: 2px solid #17302B; padding-top: 20px">
+      <span class="mono" style="font-size: 13px; color: #52645E">Step 2</span>
+      <h3 style="margin: 0; font-size: 20px">Model</h3>
+      <p style="margin: 0; color: #3E504A">As-Is and To-Be process maps, gap analysis, and the business rules that tie them together.</p>
+      <span class="mono" style="font-size: 13px; color: #52645E">→ BPMN flows, gap matrix</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px; border-top: 2px solid #17302B; padding-top: 20px">
+      <span class="mono" style="font-size: 13px; color: #52645E">Step 3</span>
+      <h3 style="margin: 0; font-size: 20px">Specify</h3>
+      <p style="margin: 0; color: #3E504A">BRD, FRD and user stories with testable acceptance criteria, traced back to business goals.</p>
+      <span class="mono" style="font-size: 13px; color: #52645E">→ BRD/FRD, backlog, RTM</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px; border-top: 2px solid #17302B; padding-top: 20px">
+      <span class="mono" style="font-size: 13px; color: #52645E">Step 4</span>
+      <h3 style="margin: 0; font-size: 20px">Validate</h3>
+      <p style="margin: 0; color: #3E504A">UAT scenarios, configuration checks and defect triage until the business signs off.</p>
+      <span class="mono" style="font-size: 13px; color: #52645E">→ UAT plan, test cases, sign-off</span>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="work" style="background: #FFFFFF; border-block: 1px solid #D5DDD8">
+  <div class="wrap" style="padding-block: 96px; display: flex; flex-direction: column; gap: 40px">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px">
+      <div style="display: flex; flex-direction: column; gap: 12px; max-width: 640px">
+        <div class="eyebrow" style="color: #B4530F">Case studies</div>
+        <h2 class="display" style="margin: 0; font-size: 40px; line-height: 1.1; font-weight: 700">Selected work</h2>
+      </div>
+      <p style="margin: 0; max-width: 380px; font-size: 14px; color: #52645E">Client names, systems and data are anonymised. Artifacts are redrawn with sample data.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px">
+      <article class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 16px; background: #F9FBF9">
+        <div style="display: flex; justify-content: space-between; gap: 12px"><span class="mono" style="font-size: 13px; color: #52645E">CS-01</span><span class="mono" style="font-size: 13px; color: #52645E">Vendor portal</span></div>
+        <h3 class="display" style="margin: 0; font-size: 24px; line-height: 1.2; font-weight: 700">Moving PO confirmation from email to a vendor portal</h3>
+        <div style="display: flex; flex-direction: column; gap: 4px"><span class="eyebrow" style="font-size: 12px; color: #52645E">Problem</span><p style="margin: 0; color: #3E504A">Vendors confirmed POs by email. Buyers chased replies for days and lost track of changes.</p></div>
+        <div style="display: flex; flex-direction: column; gap: 4px"><span class="eyebrow" style="font-size: 12px; color: #52645E">What I did</span><p style="margin: 0; color: #3E504A">Mapped the As-Is flow with buyers and vendors, defined confirm/reject rules, wrote the FRD and user stories.</p></div>
+        <div style="display: flex; flex-direction: column; gap: 4px"><span class="eyebrow" style="font-size: 12px; color: #52645E">Outcome</span><p style="margin: 0; color: #3E504A">PO confirmation time cut from [X] days to [Y]. [Add your real result]</p></div>
+        <a class="textlink" href="#work" style="align-self: flex-start; color: #B4530F">Read case study</a>
+      </article>
+
+      <article class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 16px; background: #F9FBF9">
+        <div style="display: flex; justify-content: space-between; gap: 12px"><span class="mono" style="font-size: 13px; color: #52645E">CS-02</span><span class="mono" style="font-size: 13px; color: #52645E">Audit module</span></div>
+        <h3 class="display" style="margin: 0; font-size: 24px; line-height: 1.2; font-weight: 700">Digitising factory audits, from checklist to corrective action</h3>
+        <div style="display: flex; flex-direction: column; gap: 4px"><span class="eyebrow" style="font-size: 12px; color: #52645E">Problem</span><p style="margin: 0; color: #3E504A">Audit results lived in spreadsheets, so follow-up on findings was slow and hard to trace.</p></div>
+        <div style="display: flex; flex-direction: column; gap: 4px"><span class="eyebrow" style="font-size: 12px; color: #52645E">What I did</span><p style="margin: 0; color: #3E504A">Defined the audit lifecycle and status model, roles and permissions, and the finding-to-CAPA flow.</p></div>
+        <div style="display: flex; flex-direction: column; gap: 4px"><span class="eyebrow" style="font-size: 12px; color: #52645E">Outcome</span><p style="margin: 0; color: #3E504A">One traceable record per audit. [Add your real result]</p></div>
+        <a class="textlink" href="#work" style="align-self: flex-start; color: #B4530F">Read case study</a>
+      </article>
+
+      <article class="card" style="padding: 28px; display: flex; flex-direction: column; gap: 16px; background: #F9FBF9">
+        <div style="display: flex; justify-content: space-between; gap: 12px"><span class="mono" style="font-size: 13px; color: #52645E">CS-03</span><span class="mono" style="font-size: 13px; color: #52645E">Testing &amp; config</span></div>
+        <h3 class="display" style="margin: 0; font-size: 24px; line-height: 1.2; font-weight: 700">A repeatable configuration and UAT process for a multi-module rollout</h3>
+        <div style="display: flex; flex-direction: column; gap: 4px"><span class="eyebrow" style="font-size: 12px; color: #52645E">Problem</span><p style="margin: 0; color: #3E504A">Each release was configured and tested differently, so defects slipped into production.</p></div>
+        <div style="display: flex; flex-direction: column; gap: 4px"><span class="eyebrow" style="font-size: 12px; color: #52645E">What I did</span><p style="margin: 0; color: #3E504A">Wrote a configuration checklist, UAT scenarios per module and a defect triage routine with the dev team.</p></div>
+        <div style="display: flex; flex-direction: column; gap: 4px"><span class="eyebrow" style="font-size: 12px; color: #52645E">Outcome</span><p style="margin: 0; color: #3E504A">Fewer post-release defects. [Add your real result]</p></div>
+        <a class="textlink" href="#work" style="align-self: flex-start; color: #B4530F">Read case study</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WRITING -->
+<section id="writing" class="wrap" style="padding-block: 96px; display: flex; flex-direction: column; gap: 40px">
+  <div style="display: flex; flex-direction: column; gap: 12px; max-width: 640px">
+    <div class="eyebrow" style="color: #B4530F">Writing</div>
+    <h2 class="display" style="margin: 0; font-size: 40px; line-height: 1.1; font-weight: 700">Notes on BA work, supply chain and AI</h2>
+  </div>
+  <div style="display: flex; flex-direction: column">
+    <a href="#writing" style="display: flex; flex-wrap: wrap; gap: 8px 32px; align-items: baseline; padding-block: 24px; border-top: 1px solid #D5DDD8; text-decoration: none; color: #17302B">
+      <span class="mono" style="flex: 0 0 140px; font-size: 13px; color: #B4530F">AI for BA</span>
+      <span style="flex: 1 1 360px; min-width: 0; font-size: 20px; font-weight: 600">Building a requirements review agent: what worked in week one</span>
+      <span class="mono" style="font-size: 13px; color: #52645E">6 min read</span>
+    </a>
+    <a href="#writing" style="display: flex; flex-wrap: wrap; gap: 8px 32px; align-items: baseline; padding-block: 24px; border-top: 1px solid #D5DDD8; text-decoration: none; color: #17302B">
+      <span class="mono" style="flex: 0 0 140px; font-size: 13px; color: #B4530F">BA craft</span>
+      <span style="flex: 1 1 360px; min-width: 0; font-size: 20px; font-weight: 600">Acceptance criteria that don't start arguments in UAT</span>
+      <span class="mono" style="font-size: 13px; color: #52645E">5 min read</span>
+    </a>
+    <a href="#writing" style="display: flex; flex-wrap: wrap; gap: 8px 32px; align-items: baseline; padding-block: 24px; border-block: 1px solid #D5DDD8; text-decoration: none; color: #17302B">
+      <span class="mono" style="flex: 0 0 140px; font-size: 13px; color: #B4530F">Supply chain</span>
+      <span style="flex: 1 1 360px; min-width: 0; font-size: 20px; font-weight: 600">PO to ASN to invoice: the flow every new supply chain BA should know</span>
+      <span class="mono" style="font-size: 13px; color: #52645E">8 min read</span>
+    </a>
+  </div>
+</section>
+
+<!-- TOOLKIT -->
+<section id="toolkit" style="background: #E7EEEA">
+  <div class="wrap" style="padding-block: 96px; display: flex; flex-direction: column; gap: 40px">
+    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 640px">
+      <div class="eyebrow" style="color: #B4530F">Toolkit</div>
+      <h2 class="display" style="margin: 0; font-size: 40px; line-height: 1.1; font-weight: 700">Templates I use every week</h2>
+      <p style="margin: 0; color: #3E504A">Free to copy and adapt for your own projects.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px">
+      <div class="card" style="padding: 24px; display: flex; flex-direction: column; gap: 10px">
+        <span class="mono" style="font-size: 13px; color: #52645E">Checklist · 32 checks</span>
+        <h3 style="margin: 0; font-size: 19px">BRD review checklist</h3>
+        <p style="margin: 0; color: #3E504A">Completeness, clarity, testability and consistency checks before stakeholder sign-off.</p>
+        <a class="textlink" href="#toolkit" style="align-self: flex-start; color: #B4530F">Get the checklist</a>
+      </div>
+      <div class="card" style="padding: 24px; display: flex; flex-direction: column; gap: 10px">
+        <span class="mono" style="font-size: 13px; color: #52645E">Template</span>
+        <h3 style="margin: 0; font-size: 19px">User story &amp; AC template</h3>
+        <p style="margin: 0; color: #3E504A">INVEST story format with Given/When/Then criteria and traceability fields.</p>
+        <a class="textlink" href="#toolkit" style="align-self: flex-start; color: #B4530F">Get the template</a>
+      </div>
+      <div class="card" style="padding: 24px; display: flex; flex-direction: column; gap: 10px">
+        <span class="mono" style="font-size: 13px; color: #52645E">Prompt library</span>
+        <h3 style="margin: 0; font-size: 19px">AI prompts for BA tasks</h3>
+        <p style="margin: 0; color: #3E504A">Tested prompts for elicitation, story writing, gap analysis and document review.</p>
+        <a class="textlink" href="#toolkit" style="align-self: flex-start; color: #B4530F">See the prompts</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="wrap" style="padding-block: 96px; display: flex; flex-wrap: wrap; gap: 48px">
+  <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+    <div class="eyebrow" style="color: #B4530F">About</div>
+    <h2 class="display" style="margin: 0; font-size: 40px; line-height: 1.1; font-weight: 700">Hi, I'm Anh (Annie)</h2>
+    <p style="margin: 0; max-width: 600px; color: #3E504A">I'm an IT Business Analyst at a supply chain company in Ho Chi Minh City, working with international clients and development teams. I spend my days between buyers, QA teams, vendors and developers, making sure everyone means the same thing when they say "confirmed".</p>
+    <p style="margin: 0; max-width: 600px; color: #3E504A">I work in English and Vietnamese. Right now I'm learning how AI agents can take repetitive review work off a BA's plate, and I write about it here.</p>
+  </div>
+  <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+    <div style="display: flex; flex-direction: column; gap: 10px">
+      <span class="eyebrow" style="color: #52645E">Skills</span>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px">
+        <span style="padding: 6px 12px; border: 1px solid #C4CFC9; border-radius: 4px; font-size: 14px">Requirements elicitation</span>
+        <span style="padding: 6px 12px; border: 1px solid #C4CFC9; border-radius: 4px; font-size: 14px">BRD / FRD / SRS</span>
+        <span style="padding: 6px 12px; border: 1px solid #C4CFC9; border-radius: 4px; font-size: 14px">User stories &amp; AC</span>
+        <span style="padding: 6px 12px; border: 1px solid #C4CFC9; border-radius: 4px; font-size: 14px">BPMN process mapping</span>
+        <span style="padding: 6px 12px; border: 1px solid #C4CFC9; border-radius: 4px; font-size: 14px">Gap &amp; impact analysis</span>
+        <span style="padding: 6px 12px; border: 1px solid #C4CFC9; border-radius: 4px; font-size: 14px">UAT</span>
+        <span style="padding: 6px 12px; border: 1px solid #C4CFC9; border-radius: 4px; font-size: 14px">AI-assisted analysis</span>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px">
+      <span class="eyebrow" style="color: #52645E">Tools</span>
+      <p style="margin: 0; color: #3E504A">Jira, Confluence, Visio, Excel, Microsoft 365 Copilot, Claude, [add yours]</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px">
+      <span class="eyebrow" style="color: #52645E">Certifications</span>
+      <p style="margin: 0; color: #3E504A">[Add certifications, e.g. ECBA, PSPO]</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<footer id="contact" style="background: #17302B; color: #EAF0EC">
+  <div class="wrap" style="padding-block: 88px 40px; display: flex; flex-direction: column; gap: 48px">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 32px">
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 620px">
+        <div class="eyebrow" style="color: #9FC2B4">Contact</div>
+        <h2 class="display" style="margin: 0; font-size: 44px; line-height: 1.1; font-weight: 700; color: #FFFFFF">Working on a supply chain system? Let's talk requirements.</h2>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
+        <div style="display: flex; flex-direction: column"><span class="eyebrow" style="font-size: 12px; color: #9FC2B4">Email</span><span class="mono" style="font-size: 16px; color: #FFFFFF">[your.email@example.com]</span></div>
+        <div style="display: flex; flex-direction: column"><span class="eyebrow" style="font-size: 12px; color: #9FC2B4">LinkedIn</span><span class="mono" style="font-size: 16px; color: #FFFFFF">[linkedin.com/in/your-profile]</span></div>
+        <a class="btn" href="#contact" style="background: #B4530F; color: #FFFFFF; align-self: flex-start">Download CV</a>
+      </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; border-top: 1px solid #2F4B44; padding-top: 24px; font-size: 13px; color: #9FC2B4" class="mono">
+      <span>© 2026 Anh Nguyen</span>
+      <span>Ho Chi Minh City · English / Tiếng Việt</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
