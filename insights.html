@@ -605,37 +605,70 @@ nav.open .menu-btn span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 .back:hover{text-decoration:underline}
 .links a[aria-current="page"]{color:#fff;font-weight:500}
 footer{padding-top:24px}
-/* featured video panel */
-.vpanel{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;border-radius:var(--r);padding:26px 30px;background:linear-gradient(135deg,var(--deep) 0%,var(--deep-2) 55%,var(--deep-3) 100%);color:var(--on-deep);box-shadow:0 24px 44px -30px rgba(6,43,28,.7)}
+#insights .sec-head p.ins-intro{max-width:none;text-wrap:pretty}
+/* featured video panels */
+.ins-group{grid-column:1/-1;display:flex;align-items:center;gap:14px;margin:6px 0 -4px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.ins-group::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+.ins-group b{font-weight:500;letter-spacing:0;text-transform:none;font-size:13px;color:var(--muted)}
+.vpanel{--acc:#3FCF8E;--acc2:#D7F27E;position:relative;isolation:isolate;overflow:hidden;grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;border-radius:26px;padding:34px 38px 34px 34px;background:linear-gradient(135deg,var(--deep) 0%,var(--deep-2) 60%,var(--deep-3) 100%);color:var(--on-deep);box-shadow:0 30px 60px -36px rgba(6,43,28,.8);transition:transform .25s,box-shadow .25s}
+.vpanel:hover{transform:translateY(-4px);box-shadow:0 40px 70px -36px rgba(6,43,28,.85)}
+.vpanel::before{content:"";position:absolute;z-index:-1;width:460px;height:460px;right:-120px;top:-200px;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--acc) 38%,transparent),transparent);filter:blur(10px)}
+.vpanel::after{content:"";position:absolute;top:0;left:34px;width:min(420px,50%);height:4px;border-radius:0 0 4px 4px;background:linear-gradient(90deg,var(--acc),var(--acc2),transparent 85%)}
+.vpanel .vbg{position:absolute;z-index:-1;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.05' stroke-width='1.4' stroke-linecap='round'%3E%3Cpath d='M28 70C28 42 50 24 74 22C72 48 56 68 28 70Z'/%3E%3Cpath d='M28 70L66 30'/%3E%3Cpath d='M136 150c-24-2-38-20-36-46 26 2 40 20 36 46Z'/%3E%3Cpath d='M136 150L104 108'/%3E%3C/g%3E%3C/svg%3E");background-size:200px}
+.vnum{position:absolute;z-index:-1;right:26px;bottom:-34px;font-size:150px;font-weight:700;line-height:1;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.5px color-mix(in srgb,var(--acc) 35%,transparent);pointer-events:none;user-select:none}
 .vpanel > *{min-width:0}
-.vthumb{all:unset;position:relative;display:block;width:150px;aspect-ratio:576/1030;border-radius:18px;overflow:hidden;cursor:pointer;border:3px solid rgba(255,255,255,.14);box-shadow:0 18px 32px -18px rgba(0,0,0,.7)}
-.vthumb img{display:block;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .3s}
-.vthumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(3,20,12,.55))}
-.vthumb:hover img{transform:scale(1.05)}
-.vthumb:focus-visible{outline:2px solid var(--emerald);outline-offset:3px}
-.vplay{position:absolute;z-index:1;left:50%;top:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;display:grid;place-items:center;background:var(--emerald);color:#062B1C;box-shadow:0 0 0 6px rgba(63,207,142,.25)}
+.vphone{position:relative;padding:14px 0 14px 14px}
+.vphone::before{content:"";position:absolute;left:0;top:0;width:150px;aspect-ratio:9/16;border-radius:24px;background:linear-gradient(150deg,var(--acc),var(--acc2));opacity:.55;transform:rotate(-7deg);transform-origin:bottom left}
+.vthumb{all:unset;position:relative;display:block;width:160px;aspect-ratio:9/16;border-radius:24px;overflow:hidden;cursor:pointer;border:5px solid #0B1A12;background:#0B1A12;box-shadow:0 0 0 1px rgba(255,255,255,.12),0 26px 44px -18px rgba(0,0,0,.8);transition:transform .3s}
+.vthumb::before{content:"";position:absolute;z-index:2;left:50%;top:6px;width:44px;height:6px;margin-left:-22px;border-radius:6px;background:#0B1A12}
+.vthumb img{display:block;width:100%;height:100%;object-fit:cover;object-position:top;border-radius:19px;transition:transform .4s}
+.vthumb::after{content:"";position:absolute;inset:0;border-radius:19px;background:linear-gradient(180deg,transparent 45%,rgba(3,20,12,.6))}
+.vpanel:hover .vthumb{transform:rotate(2deg) translateY(-3px)}
+.vthumb:hover img{transform:scale(1.06)}
+.vthumb:focus-visible{outline:2px solid var(--acc);outline-offset:4px}
+.vplay{position:absolute;z-index:3;left:50%;top:50%;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#062B1C}
+.vplay::before{content:"";position:absolute;inset:-8px;border-radius:50%;border:2px solid rgba(255,255,255,.7)}
+@media (prefers-reduced-motion:no-preference){.vplay::before{animation:ping 2s cubic-bezier(0,0,.2,1) infinite}@keyframes ping{0%{transform:scale(.9);opacity:1}100%{transform:scale(1.5);opacity:0}}}
 .vplay svg{width:22px;height:22px;margin-left:3px}
-.vdur{position:absolute;z-index:1;right:8px;bottom:8px;font-size:11px;font-weight:500;color:#fff;background:rgba(0,0,0,.55);padding:1px 7px;border-radius:6px;font-variant-numeric:tabular-nums}
-.vbody{display:flex;flex-direction:column;gap:12px}
-.vpanel .itag{background:var(--lime);color:#062B1C;border-color:transparent}
-.vpanel h3{font-size:clamp(20px,2.2vw,24px);color:#fff;line-height:1.3}
-.vpanel p{margin:0;color:var(--on-deep-muted);font-size:15px;max-width:64ch}
-.vpoints{list-style:none;margin:2px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;font-size:14px;color:var(--on-deep)}
+.vdur{position:absolute;z-index:3;right:10px;bottom:10px;font-size:11px;font-weight:500;color:#fff;background:rgba(0,0,0,.6);padding:1px 7px;border-radius:6px;font-variant-numeric:tabular-nums}
+.vbody{display:flex;flex-direction:column;gap:14px}
+.vtop{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.vpanel .itag{align-self:auto;display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.08);color:#fff;border:1px solid color-mix(in srgb,var(--acc) 60%,transparent)}
+.vpanel .itag::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 3px color-mix(in srgb,var(--acc) 30%,transparent)}
+.vkind{font-size:12px;color:var(--on-deep-muted);letter-spacing:.04em}
+.vpanel h3{font-size:clamp(22px,2.5vw,28px);color:#fff;line-height:1.2;letter-spacing:-.01em}
+.vpanel p{margin:0;color:var(--on-deep-muted);font-size:15.5px;max-width:66ch}
+.vstats{display:flex;flex-wrap:wrap;gap:10px}
+.vstat{display:flex;flex-direction:column;gap:1px;min-width:118px;padding:10px 16px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}
+.vstat small{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-deep-muted)}
+.vstat b{font-size:16px;font-weight:600;color:#fff;font-variant-numeric:tabular-nums}
+.vstat:first-child{background:color-mix(in srgb,var(--acc) 18%,transparent);border-color:color-mix(in srgb,var(--acc) 45%,transparent)}
+.vpoints{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 26px;font-size:14px;color:var(--on-deep)}
 .vpoints li{position:relative;padding-left:24px;line-height:1.55}
-.vpoints li::before{content:"";position:absolute;left:0;top:.3em;width:15px;height:15px;border-radius:50%;background:rgba(63,207,142,.2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233FCF8E' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/9px no-repeat}
-.vactions{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:6px}
-.vbtn{display:inline-flex;align-items:center;gap:8px;font:500 14px var(--font);color:#062B1C;background:var(--emerald);border:0;padding:10px 20px;border-radius:999px;cursor:pointer;transition:transform .15s}
+.vpoints li::before{content:"";position:absolute;left:0;top:.3em;width:15px;height:15px;border-radius:50%;background:color-mix(in srgb,var(--acc) 22%,transparent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/9px no-repeat}
+.vactions{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:4px}
+.vbtn{display:inline-flex;align-items:center;gap:8px;font:600 14px var(--font);color:#062B1C;background:linear-gradient(110deg,var(--emerald),var(--lime));border:0;padding:11px 22px;border-radius:999px;cursor:pointer;box-shadow:0 12px 24px -12px rgba(63,207,142,.8);transition:transform .15s}
 .vbtn:hover{transform:translateY(-2px)}
 .vbtn svg{width:16px;height:16px}
 .vnote{font-size:13px;color:var(--on-deep-muted)}
-@media (max-width:640px){
-  .vpanel{grid-template-columns:1fr;justify-items:start;padding:22px 20px;gap:20px}
-  .vthumb{width:130px}
+.vpanel.li{--acc:#4FA3F7;--acc2:#9CD0FF}
+.vpanel.gm{--acc:#8AB4F8;--acc2:#F28B82}
+.vpanel.gm::after{background:linear-gradient(90deg,#4285F4,#9B72CB,#D96570,#F4B400,transparent 90%)}
+.vpanel.fg{--acc:#A259FF;--acc2:#FF7262}
+.vpanel.fg::after{background:linear-gradient(90deg,#F24E1E,#A259FF,#1ABCFE,#0ACF83,transparent 90%)}
+@media (max-width:760px){
+  .vpanel{grid-template-columns:1fr;justify-items:start;padding:28px 22px;gap:24px}
+  .vthumb{width:140px}.vphone::before{width:130px}
   .vpoints{grid-template-columns:1fr}
+  .vstat{min-width:0;flex:1 1 40%}
+  .vnum{font-size:110px;bottom:-24px}
+  .ins-group b{display:none}
+  .vstat{flex:1 1 0;padding:9px 11px}.vstat b{font-size:14px}.vstat small{font-size:9.5px;letter-spacing:.1em}
+  .vpanel::after{left:22px}
 }
 /* video modal */
 .vmodal{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:calc(56px + env(safe-area-inset-top,0px)) 16px 24px;background:rgba(3,20,12,.9)}
-.vmodal video{display:block;max-height:100%;max-width:100%;aspect-ratio:576/1030;border-radius:16px;background:#000;box-shadow:0 30px 60px -20px rgba(0,0,0,.8)}
+.vmodal video{display:block;height:100%;max-height:100%;max-width:100%;aspect-ratio:9/16;object-fit:contain;border-radius:16px;background:#000;box-shadow:0 30px 60px -20px rgba(0,0,0,.8)}
 .vclose{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:16px;font:500 14px var(--font);background:var(--emerald);color:#062B1C;border:0;padding:9px 16px;border-radius:999px;cursor:pointer}
 </style>
 </head>
@@ -648,30 +681,52 @@ footer{padding-top:24px}
 <main>
   <section id="insights"><div class="wrap">
     <a class="back" href="index.html">← Back to portfolio</a>
-    <div class="sec-head"><h2>Notes from the <span>BA desk.</span></h2><p>A space where I share what I learn about business analysis and working with AI. First notes are on the way.</p></div>
+    <div class="sec-head"><h2>Notes from the <span>BA desk.</span></h2><p class="ins-intro">A collection of the courses, certifications, and practical know-how gathered along the way at work and in study, plus reviews of courses taken.</p></div>
     <div class="ins">
-      <article class="vpanel" aria-labelledby="vp-title">
-        <button class="vthumb" type="button" data-video aria-label="Play video: How I took LinkedIn Learning courses for free">
+      <div class="ins-group">Courses &amp; certifications <b>Short video guides</b></div>
+      <article class="vpanel li" aria-labelledby="vp-learning-linkedin">
+        <span class="vbg" aria-hidden="true"></span><span class="vnum" aria-hidden="true">01</span>
+        <div class="vphone"><button class="vthumb" type="button" data-video="learning-linkedin" data-title="LinkedIn Learning Certificates at No Cost" aria-label="Play video: LinkedIn Learning Certificates at No Cost">
           <img src="assets/learning-linkedin.jpg" alt="" loading="lazy">
-          <span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg></span>
-          <span class="vdur">0:51</span>
-        </button>
+          <span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg></span><span class="vdur">0:51</span>
+        </button></div>
         <div class="vbody">
-          <span class="itag">Learning · Video</span>
-          <h3 id="vp-title">How I took LinkedIn Learning courses for free</h3>
-          <p>A quick walkthrough of how I completed several Business Analysis courses and earned their certificates on LinkedIn Learning without paying.</p>
-          <ul class="vpoints">
-            <li>Sign up for the one-month free trial and cancel before it renews</li>
-            <li>Learn on a computer or with the LinkedIn Learning mobile app</li>
-            <li>Courses: BA Foundations, CBAP prep, Project Management, Excel for BAs</li>
-            <li>Add the certificates to your LinkedIn profile under Licenses &amp; certifications</li>
-          </ul>
-          <div class="vactions">
-            <button class="vbtn" type="button" data-video><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg>Watch the video</button>
-            <span class="vnote">51 seconds · captions in Vietnamese</span>
-          </div>
+          <div class="vtop"><span class="itag">LinkedIn Learning · Business Analysis</span><span class="vkind">Online course</span></div>
+          <h3 id="vp-learning-linkedin">LinkedIn Learning Certificates at No Cost</h3>
+          <p>A walkthrough of completing Business Analysis courses and earning their certificates on LinkedIn Learning using the free trial.</p>
+          <ul class="vpoints"><li>Sign up for the one-month free trial and cancel before it renews</li><li>Learn on a computer or with the LinkedIn Learning mobile app</li><li>Courses: BA Foundations, CBAP prep, Project Management, Excel for BAs</li><li>Add certificates to LinkedIn under Licenses &amp; certifications</li></ul>
+          <div class="vactions"><button class="vbtn" type="button" data-video="learning-linkedin" data-title="LinkedIn Learning Certificates at No Cost"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg>Watch the video</button><span class="vnote">51 seconds · captions in Vietnamese</span></div>
         </div>
       </article>
+      <article class="vpanel gm" aria-labelledby="vp-gemini-educator">
+        <span class="vbg" aria-hidden="true"></span><span class="vnum" aria-hidden="true">02</span>
+        <div class="vphone"><button class="vthumb" type="button" data-video="gemini-educator" data-title="Gemini Certified Educator: Exam Guide" aria-label="Play video: Gemini Certified Educator: Exam Guide">
+          <img src="assets/gemini-educator.jpg" alt="" loading="lazy">
+          <span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg></span><span class="vdur">0:30</span>
+        </button></div>
+        <div class="vbody">
+          <div class="vtop"><span class="itag">Google for Education · Gemini</span><span class="vkind">Certification exam</span></div>
+          <h3 id="vp-gemini-educator">Gemini Certified Educator: Exam Guide</h3>
+          <p>Google for Education's certificate for using Google AI (Gemini) in work and learning: exam format, cost and retake rules.</p>
+          <ul class="vpoints"><li>37 multiple-choice questions, taken online</li><li>Exam is in English only</li><li>Free until 31 Dec 2025; US$25 after that</li><li>Failed attempt: wait 14 days to retake</li></ul>
+          <div class="vactions"><button class="vbtn" type="button" data-video="gemini-educator" data-title="Gemini Certified Educator: Exam Guide"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg>Watch the video</button><span class="vnote">30 seconds · captions in Vietnamese</span></div>
+        </div>
+      </article>
+      <article class="vpanel fg" aria-labelledby="vp-figma-course">
+        <span class="vbg" aria-hidden="true"></span><span class="vnum" aria-hidden="true">03</span>
+        <div class="vphone"><button class="vthumb" type="button" data-video="figma-course" data-title="Figma Fundamentals at TELOS: Course Review" aria-label="Play video: Figma Fundamentals at TELOS: Course Review">
+          <img src="assets/figma-course.jpg" alt="" loading="lazy">
+          <span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg></span><span class="vdur">0:54</span>
+        </button></div>
+        <div class="vbody">
+          <div class="vtop"><span class="itag">UI/UX Design · Figma</span><span class="vkind">Instructor-led course</span></div>
+          <h3 id="vp-figma-course">Figma Fundamentals at TELOS: Course Review</h3>
+          <p>A beginner Figma course for designers and developers, focused on design-system thinking rather than just the tool, ending with a real app design project.</p>
+          <ul class="vpoints"><li>Components, Auto Layout, color and typography systems</li><li>Online or offline classes, with homework shared on Discord</li><li>Instructor: Nhan Luu, Creative Leader at TELOS</li><li>Course certificate; top students can earn a 100% scholarship</li></ul>
+          <div class="vactions"><button class="vbtn" type="button" data-video="figma-course" data-title="Figma Fundamentals at TELOS: Course Review"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg>Watch the video</button><span class="vnote">54 seconds · captions in Vietnamese</span></div>
+        </div>
+      </article>
+      <div class="ins-group">Upcoming notes <b>In progress</b></div>
       <article class="icard"><span class="itag">Requirements</span><h3>Writing acceptance criteria developers actually use</h3><p>Practical patterns for clear, testable criteria that reduce back-and-forth during sprints.</p><span class="soon">Coming soon</span></article>
       <article class="icard"><span class="itag">Career</span><h3>From developer to business analyst</h3><p>What four years of writing code taught me about gathering better requirements.</p><span class="soon">Coming soon</span></article>
       <article class="icard"><span class="itag">AI for BA</span><h3>Using AI as a BA's daily assistant</h3><p>How tools like Copilot and Claude can speed up drafting, review and gap analysis.</p><span class="soon">Coming soon</span></article>
@@ -686,8 +741,8 @@ n.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',fu
 (function(){var last=null,m=null;
 function close(){if(!m)return;var v=m.querySelector('video');v.pause();m.remove();m=null;document.body.style.overflow='';document.removeEventListener('keydown',onKey);if(last)last.focus()}
 function onKey(e){if(e.key==='Escape')close()}
-function open(e){last=e.currentTarget;m=document.createElement('div');m.className='vmodal';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.setAttribute('aria-label','How I took LinkedIn Learning courses for free');
-m.innerHTML='<button class="vclose" type="button">Close ✕</button><video src="assets/learning-linkedin.mp4" poster="assets/learning-linkedin.jpg" controls autoplay playsinline preload="auto"></video>';
+function open(e){last=e.currentTarget;var k=last.getAttribute('data-video'),t=last.getAttribute('data-title')||'Video';m=document.createElement('div');m.className='vmodal';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.setAttribute('aria-label',t);
+m.innerHTML='<button class="vclose" type="button">Close ✕</button><video src="assets/'+k+'.mp4" poster="assets/'+k+'.jpg" controls autoplay playsinline preload="auto"></video>';
 m.addEventListener('click',function(ev){if(ev.target===m)close()});m.querySelector('.vclose').addEventListener('click',close);
 document.body.appendChild(m);document.body.style.overflow='hidden';document.addEventListener('keydown',onKey);m.querySelector('.vclose').focus()}
 document.querySelectorAll('[data-video]').forEach(function(x){x.addEventListener('click',open)});})();
