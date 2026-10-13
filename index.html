@@ -635,6 +635,42 @@ nav.open .menu-btn span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
   .links a{padding:12px 0;font-size:16px;border-bottom:1px solid rgba(255,255,255,.08)}
   .links a:last-child{border-bottom:0}
 }
+/* contact form */
+.ccard{align-items:start}
+.cleft{display:flex;flex-direction:column;gap:22px}
+.cleft p{margin-top:10px!important}
+.cform{position:relative;display:flex;flex-direction:column;gap:16px;padding:26px;border-radius:22px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 30px 60px -36px rgba(0,0,0,.7)}
+.cf-head{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.cf-head b{font-size:18px;font-weight:600;color:#fff}
+.cf-head small{flex-basis:100%;font-size:13px;color:var(--on-deep-muted);padding-left:20px}
+.cf-dot{width:10px;height:10px;border-radius:50%;background:var(--emerald);box-shadow:0 0 0 4px rgba(63,207,142,.25)}
+.cf-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cf-field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.cf-field span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--on-deep-muted)}
+.cf-field input,.cf-field textarea{width:100%;box-sizing:border-box;font:400 15px var(--font);color:#fff;background:rgba(3,20,12,.35);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:12px 14px;transition:border-color .2s,box-shadow .2s,background .2s}
+.cf-field textarea{resize:vertical;min-height:110px;line-height:1.5}
+.cf-field input::placeholder,.cf-field textarea::placeholder{color:rgba(238,248,241,.38)}
+.cf-field input:focus,.cf-field textarea:focus{outline:none;border-color:var(--emerald);background:rgba(3,20,12,.5);box-shadow:0 0 0 4px rgba(63,207,142,.18)}
+.cf-field.bad input,.cf-field.bad textarea{border-color:#FF8A7A;box-shadow:0 0 0 4px rgba(255,138,122,.15)}
+.cf-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+.cf-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.cf-btn{display:inline-flex;align-items:center;gap:9px;font:600 15px var(--font);color:#062B1C;background:linear-gradient(110deg,var(--emerald),var(--lime));border:0;padding:12px 24px;border-radius:999px;cursor:pointer;box-shadow:0 14px 26px -12px rgba(63,207,142,.8);transition:transform .15s,opacity .2s}
+.cf-btn:hover{transform:translateY(-2px)}
+.cf-btn svg{width:17px;height:17px;transition:transform .3s}
+.cf-btn:hover svg{transform:translate(3px,-3px)}
+.cf-btn[disabled]{opacity:.65;cursor:progress;transform:none}
+.cf-status{margin:0!important;font-size:13.5px!important;color:var(--on-deep-muted)}
+.cf-status.err{color:#FFB4A8}
+.cf-status a{color:var(--lime)}
+.cf-done{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:26px;border-radius:inherit;background:linear-gradient(150deg,var(--deep-2),var(--deep-3))}
+.cf-done[hidden]{display:none}
+.cf-done b{font-size:22px;color:#fff}
+.cf-done p{margin:0!important;max-width:30ch}
+.cf-check{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(120deg,var(--emerald),var(--lime));color:#062B1C;box-shadow:0 0 0 10px rgba(63,207,142,.15)}
+.cf-check svg{width:30px;height:30px}
+.cf-again{margin-top:6px;font:500 14px var(--font);color:var(--lime);background:none;border:1px solid rgba(215,242,126,.4);padding:8px 16px;border-radius:999px;cursor:pointer}
+@media (prefers-reduced-motion:no-preference){.cf-done:not([hidden]) .cf-check{animation:pop .5s cubic-bezier(.2,1.4,.4,1) both}@keyframes pop{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}}
+@media (max-width:640px){.cf-grid{grid-template-columns:1fr}.cform{padding:20px}}
 </style>
 </head>
 <body>
@@ -857,12 +893,26 @@ nav.open .menu-btn span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
   <section id="contact"><div class="wrap">
     <div class="ccard">
       <div class="leaf-layer leaf-dark"></div>
-      <div><h2>Let's <span>talk.</span></h2><p>I'm always happy to connect, share knowledge and explore new opportunities. Feel free to reach out anytime.</p></div>
+      <div class="cleft"><h2>Let's <span>talk.</span></h2><p>I'm always happy to connect, share knowledge and explore new opportunities. Send me a message or reach out directly.</p>
       <div class="rows">
         <div class="row"><svg class="lucide lucide-mail" aria-hidden="true"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" > <rect width="20" height="16" x="2" y="4" rx="2" /> <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /> </svg><div><small>Email</small><span class="v" id="v-email">nguyenthailananh@gmail.com</span></div><button class="copy" id="c-email" data-t="v-email">Copy</button></div>
         <div class="row"><svg class="lucide lucide-phone" aria-hidden="true"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" > <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /> </svg><div><small>Phone</small><span class="v" id="v-phone">0334 561 900</span></div><button class="copy" id="c-phone" data-t="v-phone">Copy</button></div>
         <div class="row"><svg class="lucide lucide-link" aria-hidden="true"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" > <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /> <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" /> </svg><div><small>LinkedIn</small><a class="v" href="https://www.linkedin.com/in/nguyenthailananh/" target="_blank" rel="noopener">in/nguyenthailananh</a></div></div>
       </div>
+      </div>
+      <form class="cform" id="cform" action="https://formsubmit.co/nguyenthailananh@gmail.com" method="POST" novalidate>
+        <div class="cf-head"><span class="cf-dot" aria-hidden="true"></span><b>Send a message</b><small>Usually replies within 1–2 days</small></div>
+        <div class="cf-grid">
+          <label class="cf-field"><span>Your name</span><input type="text" name="name" autocomplete="name" required maxlength="80" placeholder="Jane Doe"></label>
+          <label class="cf-field"><span>Your email</span><input type="email" name="email" autocomplete="email" required maxlength="120" placeholder="jane@company.com"></label>
+        </div>
+        <label class="cf-field"><span>Message</span><textarea name="message" rows="4" required maxlength="2000" placeholder="Hi Annie, I'd love to talk about…"></textarea></label>
+        <input type="text" name="_honey" class="cf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <div class="cf-actions"><button class="cf-btn" type="submit"><span class="cf-label">Send message</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4 20-7Z"/><path d="M22 2 11 13"/></svg></button><p class="cf-status" id="cf-status" role="status" aria-live="polite"></p></div>
+        <div class="cf-done" hidden><span class="cf-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Message sent!</b><p>Thanks for reaching out. I'll get back to you soon.</p><button type="button" class="cf-again">Send another message</button></div>
+      </form>
     </div>
   </div></section>
 </main>
@@ -897,5 +947,19 @@ lb.addEventListener('click',function(){lb.hidden=true});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.hidden=true});
 </script>
 
+<script>
+(function(){var f=document.getElementById('cform');if(!f)return;var st=document.getElementById('cf-status'),btn=f.querySelector('.cf-btn'),lbl=f.querySelector('.cf-label'),done=f.querySelector('.cf-done');
+var EP='https://formsubmit.co/ajax/nguyenthailananh@gmail.com';
+function check(){var ok=true;[].forEach.call(f.querySelectorAll('[required]'),function(el){var bad=!el.value.trim()||(el.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim()));el.closest('.cf-field').classList.toggle('bad',bad);if(bad&&ok){ok=false;el.focus()}});return ok}
+[].forEach.call(f.querySelectorAll('[required]'),function(el){el.addEventListener('input',function(){el.closest('.cf-field').classList.remove('bad')})});
+f.addEventListener('submit',function(e){e.preventDefault();st.className='cf-status';st.textContent='';
+if(f._honey.value)return;if(!check()){st.className='cf-status err';st.textContent='Please fill in your name, a valid email and a message.';return}
+var data={name:f.name.value.trim(),email:f.email.value.trim(),message:f.message.value.trim(),_subject:'Portfolio contact from '+f.name.value.trim(),_replyto:f.email.value.trim(),_captcha:'false',_template:'table'};
+btn.disabled=true;lbl.textContent='Sending…';
+fetch(EP,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)}).then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)==='false')throw new Error(j.message||'failed')})}).then(function(){f.reset();done.hidden=false;done.querySelector('.cf-again').focus()})
+.catch(function(){st.className='cf-status err';st.innerHTML='Could not send right now. Please email me at <a href="mailto:nguyenthailananh@gmail.com">nguyenthailananh@gmail.com</a>.'})
+.then(function(){btn.disabled=false;lbl.textContent='Send message'})});
+f.querySelector('.cf-again').addEventListener('click',function(){done.hidden=true;f.name.focus()});})();
+</script>
 </body>
 </html>
