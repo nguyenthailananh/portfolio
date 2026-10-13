@@ -834,6 +834,29 @@ html{scroll-behavior:smooth}
 .stamp{top:136px;right:112px}
 @media (max-width:640px){.fc-art{right:84px;top:112px}.fc-crs{right:20px;top:118px}.fc-rev{right:110px;top:26px}.t-rev .k1{display:none}}
 @media (max-width:640px){.fc-art{right:118px;top:18px}.t-art .k1{right:96px;top:150px}}
+/* published article card */
+.acard.live{cursor:pointer;border-color:color-mix(in srgb,var(--ac) 40%,var(--line))}
+.aread{display:flex;flex-direction:column;font-size:14px;font-weight:600;color:var(--ac);text-decoration:none}
+.aread::after{content:"";position:absolute;inset:0;z-index:1}
+.aread small{font-size:12px;font-weight:400;color:var(--muted)}
+.acard.live .aarrow{width:34px;height:34px;padding:8px;border-radius:50%;background:color-mix(in srgb,var(--ac) 14%,transparent)}
+.acard.live:hover .aarrow{background:var(--ac);color:#fff}
+.aread:focus-visible{outline:none}.acard.live:has(.aread:focus-visible){outline:3px solid var(--ac);outline-offset:3px}
+/* single article: wide card */
+.c-art .ins{grid-template-columns:1fr}
+.c-art .acard{display:grid;grid-template-columns:auto 1fr auto;grid-template-rows:auto auto;column-gap:22px;row-gap:6px;align-items:center;padding:26px 28px}
+.c-art .acard .atop{grid-row:1/3;flex-direction:column;align-items:flex-start;gap:10px}
+.c-art .acard .aico{width:56px;height:56px;border-radius:16px}.c-art .acard .aico svg{width:26px;height:26px}
+.c-art .acard .itag{display:none}
+.c-art .acard h3{grid-column:2;font-size:clamp(19px,2vw,23px);margin:0}
+.c-art .acard p{grid-column:2;flex:none}
+.c-art .acard .afoot{grid-column:3;grid-row:1/3;border-top:0;padding-top:0;gap:16px}
+@media (max-width:640px){
+  .c-art .acard{grid-template-columns:1fr;padding:22px}
+  .c-art .acard .atop{grid-row:auto;flex-direction:row}
+  .c-art .acard h3,.c-art .acard p,.c-art .acard .afoot{grid-column:1;grid-row:auto}
+  .c-art .acard .afoot{border-top:1px dashed var(--line);padding-top:12px}
+}
 
 </style>
 </head>
@@ -849,8 +872,8 @@ html{scroll-behavior:smooth}
     <div class="sec-head"><h2>Notes from the <span>BA desk.</span></h2><p class="ins-intro">Articles, courses and product reviews gathered along the way at work and in study: practical know-how, honest course reviews, and the gear behind the desk.</p></div>
     <div class="tiles" role="tablist" aria-label="Insights sections">
       <a class="tile t-art" href="#articles" role="tab" aria-controls="articles" aria-selected="false" id="tab-articles">
-        <span class="t-vis" aria-hidden="true"><span class="t-ring"></span><span class="t-quote">&ldquo;</span><svg class="spk k1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0Z" fill="currentColor"/></svg><svg class="spk k2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0Z" fill="currentColor"/></svg><span class="fchip fc-art"><i></i>Drafting</span><i class="sheet s3"></i><i class="sheet s2"></i><i class="sheet s1"><b></b><u></u><u></u><u></u><u class="sh"></u></i></span>
-        <span class="t-body"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16v4Z"/><path d="m13.5 6.5 4 4"/></svg></span><b class="t-title">Articles</b><span class="t-desc">Know-how on requirements, career and AI for BA.</span><span class="t-meta">3 posts <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        <span class="t-vis" aria-hidden="true"><span class="t-ring"></span><span class="t-quote">&ldquo;</span><svg class="spk k1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0Z" fill="currentColor"/></svg><svg class="spk k2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0Z" fill="currentColor"/></svg><span class="fchip fc-art"><i></i>New post</span><i class="sheet s3"></i><i class="sheet s2"></i><i class="sheet s1"><b></b><u></u><u></u><u></u><u class="sh"></u></i></span>
+        <span class="t-body"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16v4Z"/><path d="m13.5 6.5 4 4"/></svg></span><b class="t-title">Articles</b><span class="t-desc">Stories and know-how from the BA desk.</span><span class="t-meta">1 post <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
       </a>
       <a class="tile t-crs" href="#courses" role="tab" aria-controls="courses" aria-selected="false" id="tab-courses">
         <span class="t-vis" aria-hidden="true"><span class="t-ring"></span><span class="t-ring r2"></span><svg class="spk k1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0Z" fill="currentColor"/></svg><svg class="spk k2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0Z" fill="currentColor"/></svg><svg class="spk k3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0Z" fill="currentColor"/></svg><span class="fchip fc-crs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5L2 9Z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></svg>Certified</span><img class="ph p1" src="assets/figma-course.jpg" alt=""><img class="ph p2" src="assets/gemini-educator.jpg" alt=""><img class="ph p3" src="assets/learning-linkedin.jpg" alt=""></span>
@@ -862,11 +885,9 @@ html{scroll-behavior:smooth}
       </a>
     </div>
     <section class="cat c-art" id="articles">
-      <header class="cat-head"><div class="cat-txt"><h3 class="cat-title">Articles</h3></div><span class="cat-count">3 posts</span></header>
+      <header class="cat-head"><div class="cat-txt"><h3 class="cat-title">Articles</h3></div><span class="cat-count">1 post</span></header>
       <div class="ins">
-        <article class="acard a1"><span class="anum" aria-hidden="true">01</span><div class="atop"><span class="aico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="m3.5 6 1 1 2-2M3.5 12l1 1 2-2M3.5 18l1 1 2-2"/></svg></span><span class="itag">Requirements</span></div><h3>Writing acceptance criteria developers actually use</h3><p>Practical patterns for clear, testable criteria that reduce back-and-forth during sprints.</p><div class="afoot"><span class="soon">Coming soon</span><svg class="aarrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></article>
-        <article class="acard a2"><span class="anum" aria-hidden="true">02</span><div class="atop"><span class="aico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H16a3.5 3.5 0 0 0 0-7H8a3.5 3.5 0 0 1 0-7h7.5"/></svg></span><span class="itag">Career</span></div><h3>From developer to business analyst</h3><p>What four years of writing code taught me about gathering better requirements.</p><div class="afoot"><span class="soon">Coming soon</span><svg class="aarrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></article>
-        <article class="acard a3"><span class="anum" aria-hidden="true">03</span><div class="atop"><span class="aico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><path d="m12 8 1.5 2.5L16 12l-2.5 1.5L12 16l-1.5-2.5L8 12l2.5-1.5L12 8Z"/></svg></span><span class="itag">AI for BA</span></div><h3>Using AI as a BA's daily assistant</h3><p>How tools like Copilot and Claude can speed up drafting, review and gap analysis.</p><div class="afoot"><span class="soon">Coming soon</span><svg class="aarrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></article>
+        <article class="acard a2 live"><div class="atop"><span class="aico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H16a3.5 3.5 0 0 0 0-7H8a3.5 3.5 0 0 1 0-7h7.5"/></svg></span><span class="itag">Career</span></div><h3>From developer to business analyst</h3><p>Why I left four years of .NET development to start over as a BA, and why it was worth the longer road.</p><div class="afoot"><a class="aread" href="from-developer-to-ba.html">Read article<small>6 min · Vietnamese</small></a><svg class="aarrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></article>
       </div>
     </section>
     <section class="cat c-crs" id="courses">
