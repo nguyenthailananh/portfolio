@@ -658,6 +658,24 @@ footer{padding-top:24px}
 .post::before{content:"";position:absolute;z-index:-1;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%23178A52' stroke-opacity='.08' stroke-width='1.4' stroke-linecap='round'%3E%3Cpath d='M28 70C28 42 50 24 74 22C72 48 56 68 28 70Z'/%3E%3Cpath d='M28 70L66 30'/%3E%3Cpath d='M136 150c-24-2-38-20-36-46 26 2 40 20 36 46Z'/%3E%3Cpath d='M136 150L104 108'/%3E%3Cpath d='M128 48c-6-16 2-30 16-34 4 16-2 30-16 34Z'/%3E%3Cpath d='M38 150c12-12 28-12 38 0-12 12-28 12-38 0Z'/%3E%3Cpath d='M38 150h38'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
 :root[data-theme="dark"] .post::before{opacity:.5}
 .post-hero{background-color:transparent}
+.photo{margin:26px 0 30px;padding:10px 10px 0;border-radius:22px;background:var(--surface);border:1px solid var(--line);box-shadow:0 30px 60px -40px rgba(6,43,28,.7);transform:rotate(-.6deg);transition:transform .4s}
+.photo:hover{transform:rotate(0)}
+.photo img{display:block;width:100%;height:auto;max-height:620px;object-fit:cover;border-radius:14px}
+.photo figcaption{padding:12px 6px 14px;font-size:14px;color:var(--muted);text-align:center}
+/* softer section headings */
+.post-body h2{font-size:clamp(18px,1.9vw,21px)!important;font-weight:500!important;letter-spacing:0!important;line-height:1.4!important;color:var(--accent)!important;padding-left:30px!important;margin:44px 0 12px!important}
+.post-body h2::before{top:50%!important;bottom:auto!important;width:20px!important;height:20px!important;margin-top:-10px;border-radius:0!important;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 19C5 10 11 4 20 4c0 9-6 15-15 15Z' fill='%233FCF8E'/%3E%3Cpath d='M5 19 14 10' stroke='%23ffffff' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat!important}
+/* English version, small at the bottom */
+.post-en{margin-top:56px;padding-top:28px;border-top:1px dashed var(--line);font-size:14.5px;line-height:1.75;color:var(--muted)}
+.post-en p{margin:0 0 12px!important;color:var(--muted)!important}
+.post-en .en-k{display:flex;align-items:center;gap:10px;margin-bottom:10px!important;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)!important}
+.post-en .en-k span{padding:2px 8px;border-radius:6px;background:var(--mint-1);border:1px solid var(--line);letter-spacing:.06em}
+.post-en h3{margin:0 0 10px;font-size:17px;font-weight:600;line-height:1.4;color:var(--ink)}
+.post-en h4{margin:22px 0 6px;font-size:14.5px;font-weight:600;color:var(--accent)}
+.post-en strong{font-weight:600;color:color-mix(in srgb,var(--ink) 80%,var(--muted))}
+.post-en em{color:inherit}
+.post-en .en-close{margin-top:20px!important;padding:14px 16px;border-radius:12px;background:var(--mint-1);border:1px solid var(--line);font-style:italic}
+.post-en .en-close span{display:block;margin-top:6px;font-style:normal;font-size:13px}
 </style>
 </head>
 <body>
@@ -696,6 +714,8 @@ footer{padding-top:24px}
 
         <h2>Ba năm "nhập môn" cùng HRM</h2>
         <p>Công ty đầu tiên của mình là <strong>iDealogic Vietnam</strong>, với domain HRM. Mình ở đó ba năm, vừa làm vừa học, tích lũy từng chút một. Cũng trong thời gian này, mình "bỏ túi" thêm chứng chỉ <strong>Professional Scrum Master I</strong>.</p>
+        <p>Mình rất biết ơn những người bạn, những anh chị ở iDealogic đã chỉ dạy mình rất nhiều trong những ngày đầu làm BA. Không có mọi người, chặng "nhập môn" này chắc chắn đã dài hơn nhiều.</p>
+        <figure class="photo"><img src="assets/idealogic-team.jpg" alt="Annie cùng đồng nghiệp ở iDealogic Vietnam" loading="lazy" width="1164" height="945"><figcaption>Một kỷ niệm cùng đồng nghiệp ở iDealogic.</figcaption></figure>
 
         <h2>Đi nếm thử domain mới</h2>
         <p>Khi đã vững chân, mình bắt đầu tò mò: ngoài HRM, các domain khác "vị" ra sao? Thế là mình rời công ty cũ để thử sức ở những công ty và domain mới. Và khi đã có kinh nghiệm thật, xin việc dễ thở hơn hẳn, không còn cảnh CV chỉ có mỗi đồ án nữa.</p>
@@ -724,6 +744,35 @@ footer{padding-top:24px}
           <p>Cần chia sẻ gì, hãy nhắn mình nhé.</p>
           <a class="vbtn" href="index.html#contact">Nhắn tin cho mình <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
+        <section class="post-en" lang="en" aria-label="English version">
+          <p class="en-k"><span>EN</span>English version</p>
+          <h3>From developer to BA: the longer road that turned out to be the right one</h3>
+          <p>Four years of writing C#, and then one day I decided to move into business analysis and start over on a fresher salary. It sounds a bit reckless. Whether it was the right kind of reckless… read on.</p>
+
+          <h4>When your heart wants to go, but your wallet says stay</h4>
+          <p>I graduated in Computer Science in 2016 and worked as a .NET developer for four years. Not a long time, not a short time, but enough to get the hang of it.</p>
+          <p>Then the idea of becoming a Business Analyst showed up, bringing a whole list of worries with it: <em>"All those years of coding, what a waste."</em> <em>"Moving to BA means starting from zero, on a fresher salary."</em> Sound familiar? Those were exactly my first thoughts. In the end, I chose the longer road: a bit of a detour, but one that leads where I wanted to go.</p>
+
+          <h4>Developer by day, student by night</h4>
+          <p>I didn't quit right away. I signed up for the <strong>Fundamental Business Analysis</strong> course at BAC to learn the basics properly. The course came with a hands-on project, so I got to actually play the role of a BA instead of just nodding along to theory. My days were split in two: writing code by day, and learning how to write requirements so… other people could write code by night.</p>
+          <p><strong>A tip from someone who's been there:</strong> don't rush to quit; learn alongside your job. And do the course project properly, because when you have zero BA experience, that project is the first "experience" line on your CV.</p>
+
+          <h4>Finding a company brave enough to hire me</h4>
+          <p>My BA CV back then was… compact: exactly one project, my course capstone. It took a long time before a company agreed to take on a BA with no experience. What got me in was my development background and my communication skills. The price was a fresher salary, while my developer pay at the time was higher. One step back, but a step back to gain momentum.</p>
+
+          <h4>Three "foundation" years in HRM</h4>
+          <p>My first BA job was at <strong>iDealogic Vietnam</strong>, in the HRM domain. I stayed three years, learning on the job and building up experience bit by bit. I also earned my <strong>Professional Scrum Master I</strong> certification during that time. I'm very grateful to the friends and seniors at iDealogic who taught me so much in my early days as a BA.</p>
+
+          <h4>Trying new domains</h4>
+          <p>Once I had my footing, I got curious about what other domains were like, so I left to try new companies and domains: <strong>Home Credit Vietnam</strong> and <strong>MoMo</strong> (finance), and now <strong>Otto International</strong> (supply chain). With real experience behind me, job hunting got a lot easier, no more CVs with just a course project. The full journey is in the <a href="index.html#experience">Experience</a> section.</p>
+
+          <h4>Learning has no Stop button</h4>
+          <p>I never treated the basic course as the finish line. While working, I went on to the <strong>Advanced Business Analysis</strong> course at BAC and then earned the <strong>CBAP</strong> certification from IIBA. With AI showing up everywhere now, learning has even less of a Stop button. I keep picking up new skills every day.</p>
+
+          <h4>So, were those four years of coding wasted?</h4>
+          <p>Not at all. Looking back, I was worrying a bit too much. Four years of coding taught me how systems are really built, so my requirements are more realistic. And when I sit down with developers, we understand each other quickly, probably because I used to sit on their side of the table.</p>
+          <p class="en-close">It's never too late to change. As long as you know what you want, who you want to become, and you act toward it, the universe will help you get there.<br><span>— Annie, a believer in the universe</span></p>
+        </section>
       </div>
     </div>
   </article>
