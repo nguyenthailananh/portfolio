@@ -782,6 +782,58 @@ html{scroll-behavior:smooth}
   .cat-head{grid-template-columns:1fr auto;gap:4px 14px;align-items:center}.cat-big{font-size:58px}
   .cat + .cat{margin-top:56px}
 }
+/* ===== tile decoration v2 ===== */
+@property --ang{syntax:"<angle>";initial-value:0deg;inherits:false}
+.tile{background-blend-mode:normal}
+.tile .t-vis::before{content:"";position:absolute;inset:0;border-radius:inherit;background-image:radial-gradient(currentColor 1px,transparent 1.4px);background-size:16px 16px;opacity:.09;-webkit-mask-image:linear-gradient(200deg,#000 10%,transparent 65%);mask-image:linear-gradient(200deg,#000 10%,transparent 65%)}
+.tile::before{content:"";position:absolute;z-index:4;top:0;bottom:0;left:-60%;width:45%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.38),transparent);transform:skewX(-18deg);opacity:0;pointer-events:none}
+.tile:hover::before{animation:shine .9s ease}
+@keyframes shine{0%{left:-60%;opacity:1}100%{left:130%;opacity:1}}
+.t-ring{position:absolute;right:-70px;top:-70px;width:260px;height:260px;border-radius:50%;border:1.5px solid currentColor;opacity:.13}
+.t-ring.r2{right:-30px;top:-30px;width:180px;height:180px;opacity:.1}
+.t-crs .t-ring{border-color:var(--emerald);opacity:.3}.t-crs .t-ring.r2{opacity:.22}
+.t-quote{position:absolute;left:18px;top:-30px;font:700 190px/1 Georgia,serif;color:#0A3B25;opacity:.07}
+.spk{position:absolute;width:16px;height:16px}
+.t-art .spk{color:#178A52}.t-crs .spk{color:var(--lime)}.t-rev .spk{color:#A8691C}
+.t-art .k1{right:150px;top:30px}.t-art .k2{right:132px;top:190px;width:10px;height:10px}
+.t-crs .k1{right:270px;top:44px}.t-crs .k2{right:20px;top:220px;width:11px;height:11px}.t-crs .k3{right:240px;top:170px;width:9px;height:9px}
+.t-rev .k1{right:150px;top:40px}.t-rev .k2{right:24px;top:230px;width:10px;height:10px}
+.fchip{position:absolute;z-index:3;display:inline-flex;align-items:center;gap:6px;padding:6px 11px;border-radius:999px;font-size:11.5px;font-weight:600;letter-spacing:.04em;white-space:nowrap;box-shadow:0 12px 22px -12px rgba(0,0,0,.55)}
+.fchip svg{width:13px;height:13px}
+.fc-art{right:96px;top:176px;background:#0A3B25;color:#D7F27E}
+.fc-art i{width:7px;height:7px;border-radius:50%;background:#D7F27E;box-shadow:0 0 0 3px rgba(215,242,126,.3)}
+.fc-crs{right:150px;top:196px;background:linear-gradient(110deg,var(--emerald),var(--lime));color:#062B1C}
+.fc-rev{right:96px;top:196px;background:#fff;color:#E0A126;letter-spacing:.12em;font-size:12px}
+.stamp{top:150px;right:118px}
+/* stronger depth on inactive tiles (less washed out) */
+.js .tiles.picked .tile{opacity:.88;filter:saturate(.92);transform:scale(.975)}
+.js .tiles.picked .tile:hover{opacity:1;filter:none}
+/* animated gradient border on the active tile */
+.tile.on::after{inset:-1px;padding:3px;background:conic-gradient(from var(--ang),#3FCF8E,#D7F27E,#E9C27D,#4FA3F7,#3FCF8E);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);box-shadow:none!important}
+.js .tiles .tile.on::after{box-shadow:none}
+@media (prefers-reduced-motion:no-preference){
+  .tile.on::after{animation:spin 4s linear infinite}
+  @keyframes spin{to{--ang:360deg}}
+  .spk{animation:twinkle 2.6s ease-in-out infinite}.spk.k2{animation-delay:-1.1s}.spk.k3{animation-delay:-1.8s}
+  @keyframes twinkle{0%,100%{transform:scale(.6) rotate(0);opacity:.35}50%{transform:scale(1.15) rotate(45deg);opacity:1}}
+  .fchip{animation:bob 3.4s ease-in-out infinite}.fc-crs{animation-delay:-1.2s}.fc-rev{animation-delay:-2s}
+  @keyframes bob{0%,100%{translate:0 0}50%{translate:0 -6px}}
+  .tile.on .t-ring{animation:pulse 3s ease-in-out infinite}
+  @keyframes pulse{0%,100%{scale:1}50%{scale:1.06}}
+}
+@media (max-width:640px){
+  .t-quote{font-size:140px}
+  .fc-art{right:70px;top:140px}.fc-crs{right:110px;top:150px}.fc-rev{right:70px;top:142px}.stamp{display:none}
+  .t-crs .k1{right:190px;top:24px}.t-crs .k3{display:none}.t-art .k1{right:118px;top:20px}.t-rev .k1{right:104px;top:24px}
+  .spk.k2{display:none}
+}
+.fc-art{right:112px;top:132px}
+.fc-crs{right:36px;top:150px}
+.fc-rev{right:136px;top:44px}
+.t-rev .k1{right:150px;top:112px}
+.stamp{top:136px;right:112px}
+@media (max-width:640px){.fc-art{right:84px;top:112px}.fc-crs{right:20px;top:118px}.fc-rev{right:110px;top:26px}.t-rev .k1{display:none}}
+@media (max-width:640px){.fc-art{right:118px;top:18px}.t-art .k1{right:96px;top:150px}}
 
 </style>
 </head>
@@ -797,15 +849,15 @@ html{scroll-behavior:smooth}
     <div class="sec-head"><h2>Notes from the <span>BA desk.</span></h2><p class="ins-intro">Articles, courses and product reviews gathered along the way at work and in study: practical know-how, honest course reviews, and the gear behind the desk.</p></div>
     <div class="tiles" role="tablist" aria-label="Insights sections">
       <a class="tile t-art" href="#articles" role="tab" aria-controls="articles" aria-selected="false" id="tab-articles">
-        <span class="t-vis" aria-hidden="true"><i class="sheet s3"></i><i class="sheet s2"></i><i class="sheet s1"><b></b><u></u><u></u><u></u><u class="sh"></u></i></span>
+        <span class="t-vis" aria-hidden="true"><span class="t-ring"></span><span class="t-quote">&ldquo;</span><svg class="spk k1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0Z" fill="currentColor"/></svg><svg class="spk k2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0Z" fill="currentColor"/></svg><span class="fchip fc-art"><i></i>Drafting</span><i class="sheet s3"></i><i class="sheet s2"></i><i class="sheet s1"><b></b><u></u><u></u><u></u><u class="sh"></u></i></span>
         <span class="t-body"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16v4Z"/><path d="m13.5 6.5 4 4"/></svg></span><b class="t-title">Articles</b><span class="t-desc">Know-how on requirements, career and AI for BA.</span><span class="t-meta">3 posts <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
       </a>
       <a class="tile t-crs" href="#courses" role="tab" aria-controls="courses" aria-selected="false" id="tab-courses">
-        <span class="t-vis" aria-hidden="true"><img class="ph p1" src="assets/figma-course.jpg" alt=""><img class="ph p2" src="assets/gemini-educator.jpg" alt=""><img class="ph p3" src="assets/learning-linkedin.jpg" alt=""></span>
+        <span class="t-vis" aria-hidden="true"><span class="t-ring"></span><span class="t-ring r2"></span><svg class="spk k1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0Z" fill="currentColor"/></svg><svg class="spk k2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0Z" fill="currentColor"/></svg><svg class="spk k3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0Z" fill="currentColor"/></svg><span class="fchip fc-crs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5L2 9Z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></svg>Certified</span><img class="ph p1" src="assets/figma-course.jpg" alt=""><img class="ph p2" src="assets/gemini-educator.jpg" alt=""><img class="ph p3" src="assets/learning-linkedin.jpg" alt=""></span>
         <span class="t-body"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5L2 9Z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></svg></span><b class="t-title">Courses</b><span class="t-desc">Video guides to courses and certifications I have taken.</span><span class="t-meta">3 videos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
       </a>
       <a class="tile t-rev" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false" id="tab-reviews">
-        <span class="t-vis" aria-hidden="true"><img class="ph p1" src="assets/libernovo.jpg" alt=""><span class="stamp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.8-4.5 4.2 1.1 6-5.4-2.9-5.4 2.9 1.1-6-4.5-4.2 6.1-.8L12 3Z"/></svg>Tested</span></span>
+        <span class="t-vis" aria-hidden="true"><span class="t-ring"></span><svg class="spk k1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0Z" fill="currentColor"/></svg><svg class="spk k2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0Z" fill="currentColor"/></svg><span class="fchip fc-rev">★★★★★</span><img class="ph p1" src="assets/libernovo.jpg" alt=""><span class="stamp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.8-4.5 4.2 1.1 6-5.4-2.9-5.4 2.9 1.1-6-4.5-4.2 6.1-.8L12 3Z"/></svg>Tested</span></span>
         <span class="t-body"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.8-4.5 4.2 1.1 6-5.4-2.9-5.4 2.9 1.1-6-4.5-4.2 6.1-.8L12 3Z"/></svg></span><b class="t-title">Product reviews</b><span class="t-desc">Hands-on reviews of the gear behind the desk.</span><span class="t-meta">1 video <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
       </a>
     </div>

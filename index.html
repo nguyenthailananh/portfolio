@@ -654,6 +654,25 @@ nav.open .menu-btn span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 .cf-field.bad input,.cf-field.bad textarea{border-color:#FF8A7A;box-shadow:0 0 0 4px rgba(255,138,122,.15)}
 .cf-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
 .cf-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.cf-attach{display:flex;flex-direction:column;gap:6px}
+.cf-alabel{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--on-deep-muted)}
+.cf-alabel em{font-style:normal;letter-spacing:.04em;text-transform:none;opacity:.8}
+.cf-file{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.cf-drop{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;border:1.5px dashed rgba(255,255,255,.22);background:rgba(3,20,12,.22);color:var(--on-deep);font-size:14px;cursor:pointer;transition:border-color .2s,background .2s}
+.cf-drop[hidden]{display:none}
+.cf-drop svg{flex:none;width:20px;height:20px;color:var(--lime)}
+.cf-drop b{font-weight:600;color:var(--lime)}
+.cf-drop small{display:block;margin-top:2px;font-size:12px;color:var(--on-deep-muted)}
+.cf-drop:hover,.cf-drop.over{border-color:var(--emerald);background:rgba(63,207,142,.1)}
+.cf-file:focus-visible + .cf-chip,.cf-attach:has(.cf-file:focus-visible) .cf-drop{outline:2px solid var(--lime);outline-offset:2px}
+.cf-drop.bad{border-color:#FF8A7A}
+.cf-chip{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:rgba(63,207,142,.12);border:1px solid rgba(63,207,142,.4);font-size:14px;color:#fff;min-width:0}
+.cf-chip[hidden]{display:none}
+.cf-chip svg{flex:none;width:18px;height:18px;color:var(--lime)}
+.cf-fname{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:500}
+.cf-fsize{flex:none;font-size:12px;color:var(--on-deep-muted)}
+.cf-rm{flex:none;width:26px;height:26px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;cursor:pointer;font-size:12px}
+.cf-rm:hover{background:rgba(255,138,122,.35)}
 .cf-btn{display:inline-flex;align-items:center;gap:9px;font:600 15px var(--font);color:#062B1C;background:linear-gradient(110deg,var(--emerald),var(--lime));border:0;padding:12px 24px;border-radius:999px;cursor:pointer;box-shadow:0 14px 26px -12px rgba(63,207,142,.8);transition:transform .15s,opacity .2s}
 .cf-btn:hover{transform:translateY(-2px)}
 .cf-btn svg{width:17px;height:17px;transition:transform .3s}
@@ -900,16 +919,23 @@ nav.open .menu-btn span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
         <div class="row"><svg class="lucide lucide-link" aria-hidden="true"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" > <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /> <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" /> </svg><div><small>LinkedIn</small><a class="v" href="https://www.linkedin.com/in/nguyenthailananh/" target="_blank" rel="noopener">in/nguyenthailananh</a></div></div>
       </div>
       </div>
-      <form class="cform" id="cform" action="https://formsubmit.co/nguyenthailananh@gmail.com" method="POST" novalidate>
+      <form class="cform" id="cform" action="https://formsubmit.co/nguyenthailananh@gmail.com" method="POST" enctype="multipart/form-data" novalidate>
         <div class="cf-head"><span class="cf-dot" aria-hidden="true"></span><b>Send a message</b><small>Usually replies within 1–2 days</small></div>
         <div class="cf-grid">
           <label class="cf-field"><span>Your name</span><input type="text" name="name" autocomplete="name" required maxlength="80" placeholder="Jane Doe"></label>
           <label class="cf-field"><span>Your email</span><input type="email" name="email" autocomplete="email" required maxlength="120" placeholder="jane@company.com"></label>
         </div>
         <label class="cf-field"><span>Message</span><textarea name="message" rows="4" required maxlength="2000" placeholder="Hi Annie, I'd love to talk about…"></textarea></label>
+        <div class="cf-attach"><span class="cf-alabel">Attachment <em>(optional)</em></span>
+          <label class="cf-drop" for="cf-file"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.4 11.6-8.9 8.9a5.5 5.5 0 0 1-7.8-7.8l8.9-8.9a3.7 3.7 0 0 1 5.2 5.2l-8.9 8.9a1.8 1.8 0 0 1-2.6-2.6l8.2-8.2"/></svg><span><b>Choose a file</b> or drag it here<small>PDF, Word, Excel, PowerPoint, image or ZIP · max 5 MB</small></span></label>
+          <input class="cf-file" id="cf-file" type="file" name="attachment" accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.png,.jpg,.jpeg,.gif,.webp,.zip">
+          <div class="cf-chip" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg><span class="cf-fname"></span><span class="cf-fsize"></span><button type="button" class="cf-rm" aria-label="Remove attachment">✕</button></div>
+        </div>
         <input type="text" name="_honey" class="cf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_subject" value="Portfolio contact">
+        <input type="hidden" name="_next" value="https://nguyenthailananh.github.io/portfolio/index.html?sent=1#contact">
         <div class="cf-actions"><button class="cf-btn" type="submit"><span class="cf-label">Send message</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4 20-7Z"/><path d="M22 2 11 13"/></svg></button><p class="cf-status" id="cf-status" role="status" aria-live="polite"></p></div>
         <div class="cf-done" hidden><span class="cf-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Message sent!</b><p>Thanks for reaching out. I'll get back to you soon.</p><button type="button" class="cf-again">Send another message</button></div>
       </form>
@@ -948,17 +974,25 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.hidden=tr
 </script>
 
 <script>
-(function(){var f=document.getElementById('cform');if(!f)return;var st=document.getElementById('cf-status'),btn=f.querySelector('.cf-btn'),lbl=f.querySelector('.cf-label'),done=f.querySelector('.cf-done');
-var EP='https://formsubmit.co/ajax/nguyenthailananh@gmail.com';
+(function(){var f=document.getElementById('cform');if(!f)return;var st=document.getElementById('cf-status'),btn=f.querySelector('.cf-btn'),lbl=f.querySelector('.cf-label'),done=f.querySelector('.cf-done'),fi=document.getElementById('cf-file'),drop=f.querySelector('.cf-drop'),chip=f.querySelector('.cf-chip'),MAX=5*1024*1024;
+var base=location.href.split('#')[0].replace(/([?&])sent=1&?/,'$1').replace(/[?&]$/,'');
+if(/^https?:/.test(base))f.querySelector('[name=_next]').value=base+(base.indexOf('?')>-1?'&':'?')+'sent=1#contact';
+if(/[?&]sent=1\b/.test(location.search)){done.hidden=false;try{history.replaceState(null,'',base+'#contact')}catch(_){}}
+function fmt(b){return b<1024*1024?Math.max(1,Math.round(b/1024))+' KB':(b/1048576).toFixed(1)+' MB'}
+function showFile(){var x=fi.files&&fi.files[0];drop.classList.remove('bad');if(!x){chip.hidden=true;drop.hidden=false;return}
+if(x.size>MAX){fi.value='';chip.hidden=true;drop.hidden=false;drop.classList.add('bad');st.className='cf-status err';st.textContent='That file is over 5 MB. Please attach a smaller file.';return}
+st.textContent='';chip.querySelector('.cf-fname').textContent=x.name;chip.querySelector('.cf-fsize').textContent=fmt(x.size);chip.hidden=false;drop.hidden=true}
+fi.addEventListener('change',showFile);
+chip.querySelector('.cf-rm').addEventListener('click',function(){fi.value='';showFile();fi.focus()});
+['dragenter','dragover'].forEach(function(t){drop.addEventListener(t,function(e){e.preventDefault();drop.classList.add('over')})});
+['dragleave','drop'].forEach(function(t){drop.addEventListener(t,function(e){e.preventDefault();drop.classList.remove('over')})});
+drop.addEventListener('drop',function(e){if(e.dataTransfer&&e.dataTransfer.files.length){try{var d=new DataTransfer();d.items.add(e.dataTransfer.files[0]);fi.files=d.files}catch(_){fi.files=e.dataTransfer.files}showFile()}});
 function check(){var ok=true;[].forEach.call(f.querySelectorAll('[required]'),function(el){var bad=!el.value.trim()||(el.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim()));el.closest('.cf-field').classList.toggle('bad',bad);if(bad&&ok){ok=false;el.focus()}});return ok}
 [].forEach.call(f.querySelectorAll('[required]'),function(el){el.addEventListener('input',function(){el.closest('.cf-field').classList.remove('bad')})});
-f.addEventListener('submit',function(e){e.preventDefault();st.className='cf-status';st.textContent='';
-if(f._honey.value)return;if(!check()){st.className='cf-status err';st.textContent='Please fill in your name, a valid email and a message.';return}
-var data={name:f.name.value.trim(),email:f.email.value.trim(),message:f.message.value.trim(),_subject:'Portfolio contact from '+f.name.value.trim(),_replyto:f.email.value.trim(),_captcha:'false',_template:'table'};
-btn.disabled=true;lbl.textContent='Sending…';
-fetch(EP,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)}).then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)==='false')throw new Error(j.message||'failed')})}).then(function(){f.reset();done.hidden=false;done.querySelector('.cf-again').focus()})
-.catch(function(){st.className='cf-status err';st.innerHTML='Could not send right now. Please email me at <a href="mailto:nguyenthailananh@gmail.com">nguyenthailananh@gmail.com</a>.'})
-.then(function(){btn.disabled=false;lbl.textContent='Send message'})});
+f.addEventListener('submit',function(e){st.className='cf-status';st.textContent='';
+if(f._honey.value||!check()){e.preventDefault();if(!f._honey.value){st.className='cf-status err';st.textContent='Please fill in your name, a valid email and a message.'}return}
+f._subject.value='Portfolio contact from '+f.name.value.trim();btn.disabled=true;lbl.textContent='Sending…'});
+window.addEventListener('pageshow',function(){btn.disabled=false;lbl.textContent='Send message'});
 f.querySelector('.cf-again').addEventListener('click',function(){done.hidden=true;f.name.focus()});})();
 </script>
 </body>
