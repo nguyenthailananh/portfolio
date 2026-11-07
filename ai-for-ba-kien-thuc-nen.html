@@ -737,6 +737,7 @@ footer{padding-top:24px}
 .dg-s{fill:var(--muted);font:400 12.5px var(--font)}
 .dg-l{fill:var(--accent);font:500 12.5px var(--font)}
 .dg-ln{stroke:var(--muted);stroke-width:1.5;fill:none}
+.srcnote{margin:12px 0 0;font-size:13.5px;font-style:italic;color:var(--muted)}
 .shot{margin:22px 0 28px;padding:10px 10px 0;border-radius:20px;background:var(--surface);border:1px solid var(--line);box-shadow:0 26px 50px -40px rgba(6,43,28,.7)}
 .shot img{display:block;width:100%;height:auto;border-radius:12px}
 .shot.narrow{max-width:520px;margin-inline:auto}
@@ -775,6 +776,7 @@ footer{padding-top:24px}
         <div class="post-meta-top"><span class="itag ai">AI for BA</span><span>Annie Nguyen</span><span aria-hidden="true">·</span><span>8 phút đọc</span></div>
         <h1>AI cho BA: <span>hiểu nhanh LLM, Agent, RAG, MCP, Token và Context</span></h1>
         <p class="lede">Dạo này đi đâu cũng nghe RAG, MCP, AI Agent, context window… Mình ghi chép lại những khái niệm nền tảng nhất trong lúc học AI, viết theo cách một BA dễ hiểu và có ví dụ gần với công việc hằng ngày.</p>
+        <p class="srcnote">Nội dung bài viết là những gì mình học được từ khóa học AI4BA.</p>
       </div>
     </header>
 
@@ -784,7 +786,7 @@ footer{padding-top:24px}
         <nav class="toc" aria-label="Mục lục">
           <b>Trong bài này</b>
           <ol>
-            <li><a href="#tien-hoa">AI đã đi tới đâu?</a></li>
+            <li><a href="#tien-hoa">Quá trình phát triển của AI</a></li>
             <li><a href="#vong-chat">Khi bạn chat với AI</a></li>
             <li><a href="#model-agent">AI Model và AI Agent</a></li>
             <li><a href="#chatbot-agent">Chatbot, Assistant hay Agent?</a></li>
@@ -797,7 +799,7 @@ footer{padding-top:24px}
           </ol>
         </nav>
 
-        <h2 id="tien-hoa">AI đã đi tới đâu?</h2>
+        <h2 id="tien-hoa">Quá trình phát triển của AI</h2>
         <p>Từ năm 2022 đến nay, AI phát triển qua 5 giai đoạn:</p>
         <ol class="stages">
           <li><b>Generative AI</b><span>AI tạo ra nội dung: văn bản, hình ảnh…</span></li>
@@ -853,7 +855,6 @@ footer{padding-top:24px}
           <li>Báo kết quả ngược lại vào Google Sheet.</li>
         </ol>
         <p>Cả luồng trên là một AI Agent. AI còn có thể tự nhận kết quả rồi tự quyết định bước tiếp theo làm gì, gọi model nào.</p>
-        <figure class="shot"><img src="assets/ai-ba-agent-example.jpg" alt="Các bước của một AI Agent viết blog" loading="lazy" width="1192" height="459"><figcaption>Luồng làm việc của agent viết blog.</figcaption></figure>
 
         <h2 id="chatbot-agent">Chatbot, Assistant hay Agent?</h2>
         <div class="tbl"><table>
@@ -1015,7 +1016,7 @@ footer{padding-top:24px}
         <section class="post-en" lang="en" aria-label="English version">
           <p class="en-k"><span>EN</span>English summary</p>
           <h3>AI for BAs: a quick guide to LLMs, agents, RAG, MCP, tokens and context</h3>
-          <p>My study notes on the core AI concepts every business analyst keeps hearing about, explained simply with examples from everyday BA work.</p>
+          <p>My study notes from the <strong>AI4BA</strong> course on the core AI concepts every business analyst keeps hearing about, explained simply with examples from everyday BA work.</p>
           <h4>Model vs. agent</h4>
           <p>An <strong>AI model</strong> is the brain: it takes input and returns output. An <strong>AI agent</strong> is a brain with hands: it plans, uses tools and works through several steps until a goal is done. Two questions separate the levels: "Does it have tools?" separates a chatbot from an assistant; "Does it loop through steps on its own?" separates an assistant from an agent.</p>
           <h4>RAG and MCP</h4>
