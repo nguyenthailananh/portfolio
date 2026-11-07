@@ -680,11 +680,18 @@ footer{padding-top:24px}
 .post-en .en-close{margin-top:20px!important;padding:14px 16px;border-radius:12px;background:var(--mint-1);border:1px solid var(--line);font-style:italic}
 .post-en .en-close span{display:block;margin-top:6px;font-style:normal;font-size:13px}
 </style>
+<style>
+/* star on Insights menu item */
+.links a.nav-ins{display:inline-flex;align-items:center;gap:6px;color:var(--lime)!important;font-weight:500}
+.links a.nav-ins:hover{color:#fff!important}
+.nstar{width:14px!important;height:14px!important;flex:none;color:var(--lime);filter:drop-shadow(0 0 4px rgba(215,242,126,.7))}
+@media (prefers-reduced-motion:no-preference){.nstar{animation:twinkle 2.4s ease-in-out infinite}@keyframes twinkle{0%,100%{transform:scale(1) rotate(0);opacity:1}50%{transform:scale(1.25) rotate(15deg);opacity:.75}}}
+</style>
 </head>
 <body>
 <nav><div class="wrap">
   <a class="logo" href="index.html">annie<span>.</span>ba</a>
-  <div class="links" id="nav-links"><a href="index.html#about">About</a><a href="index.html#process">Process</a><a href="index.html#experience">Experience</a><a href="index.html#skills">Skills</a><a href="index.html#certificates">Certificates</a><a href="index.html#projects">Projects</a><a href="insights.html" aria-current="page">Insights</a></div>
+  <div class="links" id="nav-links"><a href="index.html#about">About</a><a href="index.html#process">Process</a><a href="index.html#experience">Experience</a><a href="index.html#skills">Skills</a><a href="index.html#certificates">Certificates</a><a href="index.html#projects">Projects</a><a class="nav-ins" href="insights.html" aria-current="page"><svg class="nstar" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.2 1.3-6.6-4.9-4.6 6.6-.8L12 2.5Z" fill="currentColor"/></svg>Insights</a></div>
   <a class="hire" href="index.html#contact">Contact</a><button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
 </div></nav>
 <main>
